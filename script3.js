@@ -1,18 +1,19 @@
 function destroyer(arr) {
-    const valsToRemove = Object.values(arguments).slice(1);
-    const filteredArray = [];
-  
-    for (let i = 0; i < arr.length; i++) {
-      let removeElement = false;
-      for (let j = 0; j < valsToRemove.length; j++) {
-        if (arr[i] === valsToRemove[j]) {
-          removeElement = true;
-        }
-      }
-      if (!removeElement) {
-        filteredArray.push(arr[i]);
+  const valsToRemove = Object.values(arguments).slice(1);
+  const filteredArray = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    let removeElement = false;
+    for (let j = 0; j < valsToRemove.length; j++) {
+      if (arr[i] === valsToRemove[j]) {
+        removeElement = true;
       }
     }
-    return filteredArray;
+    if (!removeElement) {
+      filteredArray.push(arr[i]);
+    }
   }
-  console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3))
+  return filteredArray;
+}
+console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3))
+console.log(destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan"))
