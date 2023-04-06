@@ -1,3 +1,4 @@
+//Seek and Destroy
 function destroyer(arr) {
   const valsToRemove = Object.values(arguments).slice(1);
   const filteredArray = [];
